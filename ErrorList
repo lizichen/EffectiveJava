@@ -1,0 +1,22 @@
+Error List
+
+1. Egit non-fast-forward
+Cause: 
+	The remote branch that pulls code from has changed.
+Solution: 
+	Merge remote change before commit again
+Steps:
+	In eclipse, open the view 'Git Repositories'.
+	Ensure you see your local repository and can see the remote repository as a subfolder. In my version, it's called Remotes, and then I can see the remote project within that.
+	Look for the green arrow pointing to the left, this is the 'fetch' arrow. Right click and select 'Configure Fetch'.
+	You should see the URI, ensure that it points to the remote repository.
+	Look in the ref mappings section of the pop-up. Mine was empty. This will indicate which remote references you want to fetch. Click 'Add'.
+	Type in the branch name you need to fetch from the remote repository. Mine was 'master' (btw, a dropdown here would be great!!, for now, you have to type it). Continue through the pop-up, eventually clicking 'Finish'.
+	Click 'Save and Fetch'. This will fetch that remote reference.
+	Look in the 'Branches' folder of your local repository. You should now see that remote branch in the remote folder. Again, I see 'master'.
+	Right-Click on the local branch in the 'Local' folder of 'Branches', which is named 'master'. Select 'Merge', and then select the remote branch, which is named 'origin/master'.
+	Process through the merge.
+	Commit any changes to your local repository.
+	Push your changes to the remote repository.
+Resource:	
+	http://stackoverflow.com/questions/19474186/egit-rejected-non-fast-forward
