@@ -11,4 +11,8 @@ public class TreeNode3 {
     TreeNode3(int x) {
         val = x;
     }
+
+    public void addChild(TreeNode3 x){
+        this.children.add(x);
+    }
 }
