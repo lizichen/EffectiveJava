@@ -12,4 +12,12 @@ public class Printer {
         }
         return returnValue;
     }
+
+    public static String printIntArray(int arr[], int endIndex){
+        String returnValue = "";
+        for (int i=0;i<=endIndex;i++) {
+            returnValue += (arr[i]+" ");
+        }
+        return returnValue;
+    }
 }

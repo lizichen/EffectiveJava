@@ -15,4 +15,25 @@ public class TreeNode3 {
     public void addChild(TreeNode3 x){
         this.children.add(x);
     }
+
+    public int getVal(){
+        return this.val;
+    }
+
+    public void setVal(int val1){
+        this.val = val1;
+    }
+
+    public ArrayList<TreeNode3> getChildren(){
+        return this.children;
+    }
+
+    public boolean isLeaf(){
+        if(this.children.size() == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
