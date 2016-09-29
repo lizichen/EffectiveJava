@@ -1,4 +1,7 @@
 package Sort;
+
+import util.Printer;
+
 /**
  * Created by lizichen1 on 9/20/16.
  */
@@ -8,9 +11,9 @@ public class SelectionSortIteration {
         int[] arr = {1,3,2,4,3,5,4,6};
         SelectionSortIteration selectionSortIteration = new SelectionSortIteration();
         selectionSortIteration.ascendingSort(arr);
-        selectionSortIteration.printArray(arr);
+        System.out.println(Printer.printIntArray(arr));
         selectionSortIteration.descendingSort(arr);
-        selectionSortIteration.printArray(arr);
+        System.out.println(Printer.printIntArray(arr));
     }
 
     public void ascendingSort(int arr[]){
@@ -37,12 +40,6 @@ public class SelectionSortIteration {
             int temp = arr[maxIndex];
             arr[maxIndex] = arr[i];
             arr[i] = temp;
-        }
-    }
-
-    public void printArray(int arr[]){
-        for (int i:arr) {
-            System.out.print(i+" ");
         }
     }
 }
