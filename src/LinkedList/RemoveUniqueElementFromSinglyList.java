@@ -2,6 +2,10 @@ package LinkedList;
 
 /**
  * Created by lizichen1 on 9/26/16.
+ *
+ * FA Course by A. Siegel
+ * Ex. 2.20
+ *
  */
 public class RemoveUniqueElementFromSinglyList {
 
