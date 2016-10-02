@@ -26,6 +26,15 @@ public class TreeFactory {
         return rootNode;
     }
 
+    /**
+     *                 7   _
+     *              /  |    \
+     *             4   8     12
+     *       / / / |   | \ \
+     *      1 2 3  5   9 10 11
+     *             |
+     *             6
+     */
     public static TreeNode3 createArbitraryTree(){
         TreeNode3 node7 = new TreeNode3(7);
         TreeNode3 node4 = new TreeNode3(4);
@@ -57,5 +66,21 @@ public class TreeFactory {
         node8.addChild(node11);
 
         return node7;
+    }
+
+    public static void printAllLeaves(TreeNode3 root){
+
+        if(root.getChildren().size() == 0){
+            System.out.println(root.getVal());
+        }else{
+            for (TreeNode3 v:root.getChildren()) {
+                printAllLeaves(v);
+            }
+        }
+    }
+
+    public static void printAllRootToLeafPaths(TreeNode3 root, int estLongestPath){
+        DFSPath d = new DFSPath(estLongestPath);
+        d.printDFSPath(root, 0);
     }
 }
