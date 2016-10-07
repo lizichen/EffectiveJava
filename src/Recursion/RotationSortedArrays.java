@@ -96,6 +96,38 @@ public class RotationSortedArrays {
         }
     }
 
+    /**
+     * Typical Student Answer - 1
+     * Not a Divide-And-Conquer Approach.
+     */
+    public int rotationSortedMin2(int[] A, int start, int end){
+        if (start == end)
+            return A[start];
+        int min = rotationSortedMin2(A, start, end-1);
+        if( min < A[end])
+            return min;
+        else
+            return A[end];
+    }
+
+    /**
+     * Typical Student Answer - 2
+     */
+    public int rotationSortedMin3(int[] arr, int low, int high){
+        if( high < low)
+            return arr[0];
+        if (high == low)
+            return arr[low];
+        int  mid = low + (high - low)/2;
+        if (mid < high && arr[mid + 1] < arr[mid])
+            return arr[mid+1];
+        if (mid > low && arr[mid] < arr[mid - 1])
+            return arr[mid];
+        if (arr[high] > arr[mid])
+            return rotationSortedMin3(arr, low, mid - 1);
+        return rotationSortedMin3(arr, mid + 1, high);
+    }
+
     public static void main(String[] args) {
         int[] B = {1,2,3,4,5};
         int c = 1;
@@ -109,6 +141,12 @@ public class RotationSortedArrays {
         System.out.println(rotationSortedArrays.rotationSortedMin(test1, 0, test1.length-1));
         System.out.println(rotationSortedArrays.rotationSortedMin(test2, 0, test2.length-1));
         System.out.println(rotationSortedArrays.rotationSortedMin(test3, 0, test3.length-1));
+
+        int[] test4 = {3,5,1,2,2};
+        System.out.println(rotationSortedArrays.rotationSortedMin2(test4, 0, test4.length-1));
+
+        int[] test5 = {2,3,4,5,6,1};
+        System.out.println(rotationSortedArrays.rotationSortedMin3(test5, 0, test5.length-1));
     }
 
 
