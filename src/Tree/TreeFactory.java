@@ -1,10 +1,47 @@
 package Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by lizichen1 on 9/27/16.
  */
 public class TreeFactory {
 
+    public static void main(String[] args) {
+        int[] arr = {1,2,2,3,4,4,3};
+        TreeNode root = TreeFactory.createIntegerBinaryTree(arr);
+    }
+
+    public static TreeNode createIntegerBinaryTree(int[] arr){
+
+        Queue<TreeNode> queue = new LinkedList();
+        TreeNode rootNode =new TreeNode(arr[0]);
+        queue.add(rootNode);
+        int i=1;
+        while(queue.size()!=0){
+            TreeNode inTreeNode = queue.poll();
+            if(i == arr.length){
+                break;
+            }
+            if(i < arr.length) {
+                inTreeNode.left = new TreeNode(arr[i++]);
+                queue.add(inTreeNode.left);
+            }
+            if(i < arr.length) {
+                inTreeNode.right = new TreeNode(arr[i++]);
+                queue.add(inTreeNode.right);
+            }
+        }
+        return rootNode;
+    }
+
+    /**
+     *          40
+     *      20         60
+     *   10    30     50   70
+     *
+     */
     public static TreeNode createBinaryTree(){
         TreeNode rootNode =new TreeNode(40);
         TreeNode node20=new TreeNode(20);

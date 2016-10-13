@@ -1,9 +1,15 @@
 # EffectiveJava
 
-Code Resource
+###Code Resource
+1. LeetCode
+2. HackerRank
 
-Effective Java, Joshua Bloch
-Object-Oriented Design & Patterns, Cay Horstmann
-Thinking in Java, Bruce Eckel
-CSCI-GA.1170 Fundamental Algorithms, Fall 2016, Alan Siegel, NYU Courant
-LeetCode, LintCode, HackerRank
+
+###Book Resource
+1. Effective Java, Joshua Bloch
+2. Object-Oriented Design & Patterns, Cay Horstmann
+3. Thinking in Java, Bruce Eckel
+
+
+###Course
+1. CSCI-GA.1170 Fundamental Algorithms, Fall 2016, Alan Siegel, NYU Courant
