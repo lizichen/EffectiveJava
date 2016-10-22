@@ -15,7 +15,7 @@ public class RecursivePermutation {
     }
 
     private void permall(int height) {
-        if(height==0){
+        if(height==1){
             this.printBuffer();
         }
         else {
@@ -41,7 +41,7 @@ public class RecursivePermutation {
     }
 
     public static void main(String[] args) {
-        int[] integerArr = {1,2,3,4,5,6};
+        int[] integerArr = {1,2,3,4};
         int height = integerArr.length;
         RecursivePermutation recursivePermutation = new RecursivePermutation(height);
         recursivePermutation.setBuffer(integerArr);
