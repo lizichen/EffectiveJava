@@ -52,13 +52,13 @@ public class BinomialCoefficient {
 
     public static void main(String[] args) {
         // Basic Recursion
-        System.out.println(binomialCoeff_1(6,3));
+        System.out.println("Basic Recursion: 6C3 = "+binomialCoeff_1(6,3));
         // Basic Dynamic Programming with a non-optimized lookup table.
         BinomialCoefficient.lookup = new int[7][4];
         for(int i=0;i<7;i++)
             for(int j=0;j<4;j++)
                 lookup[i][j] = -1; // initialize the lookup table
-        System.out.println(binomialCoeff_2(6,3));
+        System.out.println("Basic Dynamic Programming with a non-optimized lookup table: 6C3 = "+binomialCoeff_2(6,3));
         for(int i=0;i<7;i++) {
             for (int j = 0; j < 4; j++) {
                 System.out.print(lookup[i][j] + "\t");
@@ -66,6 +66,6 @@ public class BinomialCoefficient {
             System.out.println();
         }
         // O(n) time dynamic programming with an optimized lookup array
-        System.out.println(pascalTriangleApproach(6,3));
+        System.out.println("O(n) time dynamic programming with an optimized lookup array: 6C3 = "+pascalTriangleApproach(6,3));
     }
 }
