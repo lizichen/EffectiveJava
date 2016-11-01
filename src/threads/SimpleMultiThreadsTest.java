@@ -46,7 +46,7 @@ class Test extends Thread{
 		// Single thread process will be done here
 		for(int i = 0; i < 10; i++){
 			Thread.sleep(1);
-			System.out.println("Running in Test.run " + input);
+			System.out.println("Running in Java8LambdaTest.run " + input);
 		}
 	}
 }

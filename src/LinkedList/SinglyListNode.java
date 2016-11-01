@@ -29,4 +29,15 @@ public class SinglyListNode {
         this.next = next;
     }
 
+    public static SinglyListNode buildSinglyLinkedListFromIntArray(int[] arr){
+        SinglyListNode testroot = new SinglyListNode(arr[0]);
+        SinglyListNode cursor = testroot;
+        for(int i=1;i<arr.length;i++){
+            SinglyListNode newNode = new SinglyListNode(arr[i]);
+            cursor.next = newNode;
+            cursor = newNode;
+        }
+        return testroot;
+    }
+
 }
