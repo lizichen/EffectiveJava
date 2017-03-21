@@ -143,7 +143,7 @@
 **23**       Merge k Sorted Lists        23.3%        Hard        
 **24**       Swap Nodes in Pairs        35.1%        Easy        
 **33**       Search in Rotated Sorted Array        30.2%        Hard        
-**36**       Valid Sudoku        30.5%        Easy        
+**36**       **Valid Sudoku** (Intern Phone Interview)       30.5%        Easy        
 **37**       Sudoku Solver        24.8%        Hard        
 **39**       Combination Sum        30.9%        Medium        
 **49**       Group Anagrams        27.4%        Medium        
@@ -151,31 +151,31 @@
 **76**       Minimum Window Substring        21.2%        Hard        
 **78**       Subsets        31.3%        Medium        
 **91**       Decode Ways        17.5%        Medium        
-**104**        Maximum Depth of Binary Tree        47.8%        Easy        
-**121**        Best Time to Buy and Sell Stock        36.0%        Easy        
-**125**        Valid Palindrome        23.8%        Easy        
-**133**        Clone Graph        24.9%        Medium        
-**138**        Copy List with Random Pointer        26.1%        Hard        
-**139**        Word Break        25.2%        Medium        
-**140**        Word Break II        19.7%        Hard        
-**146**        LRU Cache        15.8%        Hard        
-**155**        Min Stack        22.0%        Easy        
-**161**        One Edit Distance         28.4%        Medium        
-**171**        Excel Sheet Column Number        41.5%        Easy        
-**186**        Reverse Words in a String II         29.1%        Medium        
-**202**        Happy Number        36.5%        Easy        
-**206**        Reverse Linked List        39.4%        Easy        
-**208**        Implement Trie (Prefix Tree)        25.3%        Medium        
-**230**        Kth Smallest Element in a BST        37.6%        Medium        
-**242**        Valid Anagram        41.7%        Easy        
-**249**        Group Shifted Strings         31.3%        Easy        
-**254**        Factor Combinations         34.7%        Medium        
-**262**        Trips and Users        16.1%        Hard        
-**266**        Palindrome Permutation         50.4%        Easy        
-**290**        Word Pattern        29.0%        Easy        
-**291**        Word Pattern II         34.8%        Hard        
-**297**        Serialize and Deserialize Binary Tree        27.8%        Har        
-**337**        House Robber III        37.0%        Medium
+**104**      Maximum Depth of Binary Tree        47.8%        Easy        
+**121**      Best Time to Buy and Sell Stock        36.0%        Easy        
+**125**      Valid Palindrome        23.8%        Easy        
+**133**      Clone Graph        24.9%        Medium        
+**138**      Copy List with Random Pointer        26.1%        Hard        
+**139**      Word Break        25.2%        Medium        
+**140**      Word Break II        19.7%        Hard        
+**146**      LRU Cache        15.8%        Hard        
+**155**      Min Stack        22.0%        Easy        
+**161**      One Edit Distance         28.4%        Medium        
+**171**      Excel Sheet Column Number        41.5%        Easy        
+**186**      Reverse Words in a String II         29.1%        Medium        
+**202**      Happy Number        36.5%        Easy        
+**206**      Reverse Linked List        39.4%        Easy        
+**208**      Implement Trie (Prefix Tree)        25.3%        Medium        
+**230**      Kth Smallest Element in a BST        37.6%        Medium        
+**242**      Valid Anagram        41.7%        Easy        
+**249**      Group Shifted Strings         31.3%        Easy        
+**254**      Factor Combinations         34.7%        Medium        
+**262**      Trips and Users        16.1%        Hard        
+**266**      Palindrome Permutation         50.4%        Easy        
+**290**      Word Pattern        29.0%        Easy        
+**291**      Word Pattern II         34.8%        Hard        
+**297**      Serialize and Deserialize Binary Tree        27.8%        Har        
+**337**      House Robber III        37.0%        Medium
 
 ### Airbnb(20)        
 1        Two Sum        23.0%        Easy        

@@ -14,6 +14,16 @@ public class RecursivePermutation {
         }
     }
 
+    /**
+     * input is {1 2 3}
+
+                    1 2 3
+
+        321         132         123
+
+      231 321     312 132     213 123
+
+     */
     private void permall(int height) {
         if(height==1){
             this.printBuffer();
@@ -41,7 +51,7 @@ public class RecursivePermutation {
     }
 
     public static void main(String[] args) {
-        int[] integerArr = {1,2,3,4};
+        int[] integerArr = {1,2,3};
         int height = integerArr.length;
         RecursivePermutation recursivePermutation = new RecursivePermutation(height);
         recursivePermutation.setBuffer(integerArr);
