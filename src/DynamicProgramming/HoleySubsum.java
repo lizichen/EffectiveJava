@@ -1,7 +1,7 @@
 package DynamicProgramming;
 
 /**
- * Created by lizichen1 on 10/24/16.
+ * Same to House Robber
  *
  * Holey SubSum of Array A
  *  Find S that has the maximum sum of non-consecutive items in A.
@@ -20,6 +20,7 @@ public class HoleySubsum {
         HoleySubsum holeysum = new HoleySubsum();
         holeysum.A = A;
         System.out.println(MHS(A.length-1));
+        System.out.println(MHS_iterative(A));
     }
 
     private static int MHS(int index) {
@@ -33,5 +34,26 @@ public class HoleySubsum {
             else
                 return len2;
         }
+    }
+
+    private static int MHS_iterative(int[] nums){
+
+        // corner case!
+        if(nums.length == 1)
+            return nums[0];
+        if(nums.length == 0)
+            return 0;
+
+        int previous = 0;
+        int current = nums[0];
+        int next = 0;
+
+        for(int i=1; i<nums.length; i++){
+            next = Math.max(current, nums[i] + previous);
+            previous = current;
+            current = next;
+        }
+
+        return current;
     }
 }
