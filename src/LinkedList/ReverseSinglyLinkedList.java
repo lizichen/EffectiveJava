@@ -2,9 +2,6 @@ package LinkedList;
 
 import LinkedList.SinglyListNode;
 
-/**
- * Created by lizichen1 on 10/31/16.
- */
 public class ReverseSinglyLinkedList {
 
     public static SinglyListNode reverseSinglyLinkedList(SinglyListNode head){
@@ -21,6 +18,18 @@ public class ReverseSinglyLinkedList {
             todoHead = temp.getNext();
             temp.setNext(newHead);
             newHead = temp;
+        }
+        return newHead;
+    }
+
+    public SinglyListNode reverseList(SinglyListNode head) {
+        SinglyListNode newHead = null;
+        while(head!=null){
+            SinglyListNode current = head;
+            SinglyListNode temp = head.next;
+            head.next = newHead;
+            newHead = current;
+            head = temp;
         }
         return newHead;
     }
