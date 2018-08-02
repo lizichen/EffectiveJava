@@ -55,13 +55,30 @@ public class TestClass {
         System.out.println(set.add(l2));
     }
 
-    public static void main(String[] args) {
+    public static void testUseOfBigInteger(){
         BigInteger t = new BigInteger("26");
         System.out.println(t.pow(2));
 
         t = t.add(new BigInteger("2"));
         System.out.println(t.toString());
+    }
 
+    public static void testHashMapComputeIfFunctions(){
+        Map<String, Integer> map = new HashMap<>();
+
+        System.out.println("computeIfAbsent...");
+
+        map.computeIfAbsent("snoop", k -> k.length());
+        System.out.println(map.get("snoop"));
+
+        System.out.println("computeIfPresent...");
+
+        map.computeIfPresent("snoop", (k,v) -> v+1);
+        System.out.println(map.get("snoop"));
+    }
+
+    public static void main(String[] args) {
+        testHashMapComputeIfFunctions();
     }
 
 
