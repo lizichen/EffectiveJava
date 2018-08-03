@@ -1,5 +1,9 @@
 package util;
 
+import Tree.TreeNode;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.Arrays;
@@ -77,8 +81,36 @@ public class TestClass {
         System.out.println(map.get("snoop"));
     }
 
+    public static void testJavaReflection(){
+        int tree_val = 1;
+
+        TreeNode node1 = new TreeNode(tree_val);
+
+        /* Example of Java Reflection: */
+        Class treenodeClassDefinition = null;
+        try {
+            treenodeClassDefinition = Class.forName("TreeNode"); // TODO: use custom ClassLoader
+            Class[] treeNodeArgClass = new Class[]{Integer.class};
+            Object[] intArg = new Object[]{tree_val};
+
+            Constructor treenodeConstructor = treenodeClassDefinition.getConstructor(treeNodeArgClass);
+            TreeNode node2 = (TreeNode)treenodeConstructor.newInstance(intArg);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
-        testHashMapComputeIfFunctions();
+
+
     }
 
 
