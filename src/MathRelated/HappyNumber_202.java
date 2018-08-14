@@ -1,4 +1,4 @@
-package ArrayStackNQueue;
+package MathRelated;
 
 import java.util.HashSet;
 
