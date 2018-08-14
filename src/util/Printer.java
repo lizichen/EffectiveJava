@@ -1,5 +1,9 @@
 package util;
 
+import java.util.HashMap;
+
+import static javafx.scene.input.KeyCode.K;
+
 /**
  * Created by lizichen1 on 9/28/16.
  */
@@ -19,5 +23,15 @@ public class Printer {
             returnValue += (arr[i]+" ");
         }
         return returnValue;
+    }
+
+    public static <K,V> String printHashMap(HashMap<K, V> map){
+        StringBuilder returnString = new StringBuilder();
+
+        for(K key : map.keySet()){
+            returnString.append(key + " : " +map.get(key)+"\n");
+        }
+
+        return returnString.toString();
     }
 }
