@@ -25,7 +25,7 @@ public class TopologicalSort {
         for (int i = 0; i < V; i++)
             visited[i] = false;
 
-        // Call the recursive helper function to store Topological Sort starting from all vertices one by one
+        // Call the recursive recursiveHelper function to store Topological Sort starting from all vertices one by one
         for (int i = 0; i < this.V; i++)
             if (visited[i] == false)
                 topologicalSortRecursiveUtil(i, visited, stack);

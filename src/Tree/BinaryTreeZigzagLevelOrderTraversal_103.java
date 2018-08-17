@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by lizichen1 on 7/28/18.
  */
-public class BinaryTreeZigzagLevelOrderTraversal {
+public class BinaryTreeZigzagLevelOrderTraversal_103 {
 
     public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 
