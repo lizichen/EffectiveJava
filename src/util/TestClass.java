@@ -39,6 +39,16 @@ public class TestClass {
         System.out.println(set.add('I'));
         System.out.println(set.add('K'));
         System.out.println(set.add('I'));
+
+        int[] candies = {1,1,2,3};
+        int count = 0;
+
+        for(int c : candies){
+            if(!set.add(c)){
+                count++;
+            }
+            System.out.println(count);
+        }
     }
 
     public static void testHashMapGetOrDefault(){
@@ -126,8 +136,12 @@ public class TestClass {
     }
 
     public static void main(String[] args) {
-
-
+        List<Integer> r = new ArrayList<>();
+        r.add(10);
+        r.add(0);
+        r.add(3);
+        r.add(3);
+        System.out.println(checkAndCount(r, 6));
     }
 
 

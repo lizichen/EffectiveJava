@@ -11,13 +11,34 @@ import java.util.Hashtable;
  */
 public class TwoSum_1 {
 
+    public int[] twoSum_forloop(int[] nums, int target) {
+        if(nums.length < 2)
+            return null;
+
+        int residual;
+
+        int index1 = -1;
+        int index2 = -1;
+
+        for(int i=0;i<nums.length;i++){
+            residual = target - nums[i];
+            index1 = i;
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[j] == residual){
+                    index2 = j;
+                    return new int[]{index1, index2};
+                }
+            }
+        }
+        return null;
+    }
+
     public static int[] twoSum(int[] nums, int target) {
 
         int index1 = -1;
         int index2 = -1;
 
         Hashtable table = new Hashtable(); // <target - nums[i], indexOfi>
-
 
         for(int i=0;i<nums.length;i++){
             int dif = target - nums[i];
@@ -39,7 +60,6 @@ public class TwoSum_1 {
         int index2 = -1;
 
         HashMap table = new HashMap(); // <target - nums[i], indexOfi>
-
 
         for(int i=0;i<nums.length;i++){
             int dif = target - nums[i];

@@ -2,11 +2,7 @@ package InterviewQuiz;
 
 import java.util.HashSet;
 
-/**
- * Created by lizichen1 on 3/20/17.
- */
 public class Uber_SudokuValidator_36 {
-
 
     public boolean isValidSudoku(int[][] grid){
         for(int i=0;i<9;i++){

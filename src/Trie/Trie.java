@@ -10,7 +10,7 @@ import java.util.LinkedList;
 
 public class Trie {
 
-    protected static int UNIQUE_ELEMENTS = 26;
+    protected static int UNIQUE_ELEMENTS = 26; // TODO: move to the TrieNode Constructor? mark as final type
     private TrieNode root;
     private static int ascii_base = 97; // 'a' = 97
     private int number_of_words = 0;

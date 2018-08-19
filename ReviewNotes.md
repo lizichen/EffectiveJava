@@ -72,7 +72,22 @@
     + Getting information about the methods and fields present inside the class at runtime.
     + Creating a new instance of a class.
     + Getting and setting the object fields directly by getting field reference, regardless of what the access modifier is.
+- `String` vs. `StringBuilder` vs. `StringBuffer`:
+    + `String` is immutable, and (thus like all other immutable objects) thread safe.
+    + `StringBuffer` is thread safe.
+    + `String` is stored in **Constant String Pool**.
+    + `StringBuilder` is not thread safe.
+    ```java
+        StringBuilder testsb = new StringBuilder("Hello ");
+        testsb.append("Java");
+        System.out.println(testsb.toString());
+        System.out.println(testsb.charAt(0));
+        System.out.println(testsb.capacity());
+    ```
+
 
 <!-- TODO: The following topics needs some expansion. -->
 - RegEx
 - `abstract` and `interface`
+- TreeMap
+- AVL & Red-Black Tree
