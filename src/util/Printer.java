@@ -1,6 +1,7 @@
 package util;
 
 import java.util.HashMap;
+import java.util.List;
 
 import static javafx.scene.input.KeyCode.K;
 
@@ -33,5 +34,17 @@ public class Printer {
         }
 
         return returnString.toString();
+    }
+
+    public static <K> void printList(List<K> list){
+        if(list == null){
+            System.out.println("Warning! List is null!");
+        }else if(list.size() == 0){
+            System.out.println("Warning! List is empty!");
+        }else{
+            for (K e : list){
+                System.out.println(e.toString());
+            }
+        }
     }
 }

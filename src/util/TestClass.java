@@ -108,6 +108,23 @@ public class TestClass {
         }
     }
 
+    // Given a list check if any continuous digits adds up to sum
+    public static int checkAndCount(List<Integer> res, int sum){
+        int count = 0;
+        for(int i=res.size() - 1; i>=1; i--){
+            int tmpSum = sum - res.get(i);
+            int found = 0; // you may find more than one subset of numbers that's good!
+            for(int j=i-1; j>=0; j--){
+                tmpSum -= res.get(j);
+                if(tmpSum == 0){
+                    found++;
+                }
+            }
+            count += found;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
 
