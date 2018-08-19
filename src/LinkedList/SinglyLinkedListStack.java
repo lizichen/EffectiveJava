@@ -1,6 +1,4 @@
-package ArrayStackNQueue;
-
-import LinkedList.SinglyListNode;
+package LinkedList;
 
 /**
  * Created by lizichen1 on 9/25/16.

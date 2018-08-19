@@ -1,4 +1,4 @@
-package ArrayStackNQueue;
+package StackNQueue;
 /**
  * Use array to implement a stack.
  * http://www.java2blog.com/2016/09/implement-stack-using-array-in-java.html

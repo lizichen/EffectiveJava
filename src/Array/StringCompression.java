@@ -1,4 +1,4 @@
-package ArrayStackNQueue;
+package Array;
 
 //Crack Coding Interview 1.5
 
@@ -6,7 +6,6 @@ package ArrayStackNQueue;
 // output: a2b1c5a3
 
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class StringCompression {
 

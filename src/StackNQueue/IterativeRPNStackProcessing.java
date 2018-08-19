@@ -1,9 +1,7 @@
-package ArrayStackNQueue;
+package StackNQueue;
 
 import static util.Evaluator.eval;
-
 import java.util.Stack;
-
 import static util.Evaluator.isOperator;
 
 /**

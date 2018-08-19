@@ -1,4 +1,4 @@
-package ArrayStackNQueue;
+package Array;
 // Crack coding interview 1.3
 
 public class StringPermutationCheck {
