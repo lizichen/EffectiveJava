@@ -136,12 +136,8 @@ public class TestClass {
     }
 
     public static void main(String[] args) {
-        List<Integer> r = new ArrayList<>();
-        r.add(10);
-        r.add(0);
-        r.add(3);
-        r.add(3);
-        System.out.println(checkAndCount(r, 6));
+        String s = "abc";
+        System.out.println(s.substring(0,1));
     }
 
 
