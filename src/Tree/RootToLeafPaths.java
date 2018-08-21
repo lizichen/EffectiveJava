@@ -27,7 +27,7 @@ public class RootToLeafPaths {
     private void DFS(TreeNode3 root, int index) {
         this.names[index] = root.val;
         if( root.isLeaf() ){
-            System.out.println(Printer.printIntArray(this.names, index));
+            System.out.println(Printer.printIntArrayToString(this.names, index));
         }
         else{
             for (TreeNode3 node:root.getChildren()){
@@ -40,7 +40,7 @@ public class RootToLeafPaths {
         for(TreeNode3 node:root.getChildren()){
             this.names[index] = node.val;
             if( node.isLeaf() ){
-                System.out.println(Printer.printIntArray(this.names, index));
+                System.out.println(Printer.printIntArrayToString(this.names, index));
             }
             else{
                 DFS_NoRoot(node, index+1);
