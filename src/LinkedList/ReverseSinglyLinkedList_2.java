@@ -9,9 +9,9 @@ package LinkedList;
 public class ReverseSinglyLinkedList_2 {
 
     // find middle node
-    public static SinglyListNode findMiddleNode(SinglyListNode head){
-        SinglyListNode fast = head.next;
-        SinglyListNode slow = head;
+    public static ListNode findMiddleNode(ListNode head){
+        ListNode fast = head.next;
+        ListNode slow = head;
 
         while(fast != null && fast.next != null){
             fast = fast.next.next;
@@ -29,14 +29,14 @@ public class ReverseSinglyLinkedList_2 {
 
 
     public static void main(String[] args){
-        SinglyListNode head = new SinglyListNode(1);
-        SinglyListNode n2 = new SinglyListNode(2);
-        SinglyListNode n3 = new SinglyListNode(3);
-        SinglyListNode n4 = new SinglyListNode(4);
-        SinglyListNode n5 = new SinglyListNode(5);
+        ListNode head = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+        ListNode n5 = new ListNode(5);
         head.setNext(n2); n2.setNext(n3); n3.setNext(n4);n4.setNext(n5);n5.setNext(null);
 
-        SinglyListNode middleNode = findMiddleNode(head);
+        ListNode middleNode = findMiddleNode(head);
         System.out.println(middleNode.val);
 
     }

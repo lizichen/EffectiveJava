@@ -86,7 +86,7 @@ public class DeepCopyArbitraryLinkedList {
     }
 }
 
-class RandomListNode extends SinglyListNode{
+class RandomListNode extends ListNode {
 
     private RandomListNode nextArbitraryNode;
 

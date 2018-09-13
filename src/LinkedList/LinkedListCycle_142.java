@@ -1,12 +1,12 @@
 package LinkedList;
 
 public class LinkedListCycle_142 {
-    public static SinglyListNode detectCycle(SinglyListNode head) {
+    public static ListNode detectCycle(ListNode head) {
         if(head == null || head.next == null)
             return null;
 
-        SinglyListNode walker = head.next;
-        SinglyListNode runner = head.next;
+        ListNode walker = head.next;
+        ListNode runner = head.next;
         if(runner != null)
             runner = runner.next;
         else
@@ -36,7 +36,7 @@ public class LinkedListCycle_142 {
 
     public static void main(String[] args) {
         int[] arr = {0,1,2,3};
-        SinglyListNode root = SinglyListNode.buildSinglyLinkedListFromIntArray(arr);
+        ListNode root = ListNode.buildSinglyLinkedListFromIntArray(arr);
         root.next.next.next.next = root.next;
         detectCycle(root);
     }

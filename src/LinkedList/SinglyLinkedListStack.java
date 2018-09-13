@@ -5,14 +5,14 @@ package LinkedList;
  */
 public class SinglyLinkedListStack {
 
-    private SinglyListNode root;
+    private ListNode root;
 
     public SinglyLinkedListStack(){
         root = null;
     }
 
     private void push(int newValue){
-        SinglyListNode newNode = new SinglyListNode(newValue);
+        ListNode newNode = new ListNode(newValue);
         if(this.root == null) {
             this.root = newNode;
         }else{

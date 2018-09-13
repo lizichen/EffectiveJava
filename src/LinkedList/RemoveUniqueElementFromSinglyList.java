@@ -2,7 +2,7 @@ package LinkedList;
 
 import util.Printer;
 
-import static LinkedList.SinglyListNode.buildSinglyLinkedListFromIntArray;
+import static LinkedList.ListNode.buildSinglyLinkedListFromIntArray;
 
 /**
  * Created by lizichen1 on 9/26/16.
@@ -18,23 +18,23 @@ public class RemoveUniqueElementFromSinglyList {
 
     public static void main(String[] args) {
         int[] arr = {1,2,0,4,1,0,2,6,0,8,1,9,0,0,10};
-        SinglyListNode a = buildSinglyLinkedListFromIntArray(arr);
-        System.out.println(Printer.printIntArray(arr));
+        ListNode a = buildSinglyLinkedListFromIntArray(arr);
+        System.out.println(Printer.printIntArrayToString(arr));
         System.out.println("Iterative Clean: ");
-        SinglyListNode c = iterativeClean(a);
+        ListNode c = iterativeClean(a);
         while(c !=null){
             System.out.print(c.val+" ");
             c = c.next;
         }
         System.out.println("\nRecursive Clean: ");
-        SinglyListNode b = recursiveClean(a);
+        ListNode b = recursiveClean(a);
         while(b !=null){
             System.out.print(b.val+" ");
             b = b.next;
         }
     }
 
-    public static SinglyListNode recursiveClean(SinglyListNode a){
+    public static ListNode recursiveClean(ListNode a){
         if(a.next == null)
             if (a.val == CLEAN_VALUE_2)
                 a = null;
@@ -48,15 +48,15 @@ public class RemoveUniqueElementFromSinglyList {
         return a;
     }
 
-    public static SinglyListNode iterativeClean(SinglyListNode a){
+    public static ListNode iterativeClean(ListNode a){
         if(a == null || a.next == null)
             return a;
         else{
             if(a.getValue() == CLEAN_VALUE) {
                 a = a.getNext();
             }
-            SinglyListNode cursor = a; // because this cannot eliminate the first element, we have to add the above if evaluation.
-            SinglyListNode previousCursor = null;
+            ListNode cursor = a; // because this cannot eliminate the first element, we have to add the above if evaluation.
+            ListNode previousCursor = null;
             while(cursor!=null){
                 if(cursor.getValue() == CLEAN_VALUE){
                     previousCursor.setNext(cursor.getNext());

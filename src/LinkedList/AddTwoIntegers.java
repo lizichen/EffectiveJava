@@ -1,7 +1,5 @@
 package LinkedList;
 
-import util.Printer;
-
 /**
  * Created by lizichen1 on 10/31/16.
  *
@@ -9,8 +7,8 @@ import util.Printer;
  */
 public class AddTwoIntegers {
 
-    private SinglyListNode firstHead;
-    private SinglyListNode secondHead;
+    private ListNode firstHead;
+    private ListNode secondHead;
 
     public AddTwoIntegers(int firstInt, int secondInt){
         String temp = Integer.toString(firstInt);
@@ -27,13 +25,13 @@ public class AddTwoIntegers {
             secondArr[i] = secondInt % 10;
             secondInt /= 10;
         }
-        this.firstHead = SinglyListNode.buildSinglyLinkedListFromIntArray(firstArr);
-        this.secondHead = SinglyListNode.buildSinglyLinkedListFromIntArray(secondArr);
+        this.firstHead = ListNode.buildSinglyLinkedListFromIntArray(firstArr);
+        this.secondHead = ListNode.buildSinglyLinkedListFromIntArray(secondArr);
     }
 
-    public SinglyListNode computer(){
+    public ListNode computer(){
 
-        SinglyListNode result = add();
+        ListNode result = add();
         // TODO:
         // multiply
         // divide
@@ -41,10 +39,10 @@ public class AddTwoIntegers {
         return ReverseSinglyLinkedList.reverseSinglyLinkedList(result); // reverse the result list.
     }
 
-    public SinglyListNode add(){
+    public ListNode add(){
         int carry = 0;
-        SinglyListNode resultNode = null;
-        SinglyListNode cursor = null;
+        ListNode resultNode = null;
+        ListNode cursor = null;
         int resultDigit = 0;
 
         if(firstHead == null)
@@ -57,7 +55,7 @@ public class AddTwoIntegers {
 
             resultDigit = firstVal + secondVal + carry;
             // PAY ATTENTION TO CLEARING OUT THE CARRIED DIGIT! - carry
-            SinglyListNode newValNode = new SinglyListNode( resultDigit % 10 );
+            ListNode newValNode = new ListNode( resultDigit % 10 );
             carry = resultDigit / 10;
 
             if(resultNode == null){
@@ -79,7 +77,7 @@ public class AddTwoIntegers {
         int int2 = 319;
         AddTwoIntegers addTwoIntegers = new AddTwoIntegers(int1, int2);
         System.out.print(int1 + " + " + int2 + " = ");
-        SinglyListNode resultHead = addTwoIntegers.computer();
+        ListNode resultHead = addTwoIntegers.computer();
 
         while (resultHead!=null){
             System.out.print(resultHead.getValue());

@@ -5,7 +5,7 @@ package LinkedList;
  */
 public class SortedSinglyList {
 
-    SinglyListNode head;
+    ListNode head;
     int size;
 
 
@@ -14,7 +14,7 @@ public class SortedSinglyList {
         this.size = 0;
     }
 
-    public SortedSinglyList(SinglyListNode head){
+    public SortedSinglyList(ListNode head){
         this.head = head;
         this.size = 1;
     }
@@ -22,17 +22,17 @@ public class SortedSinglyList {
     /**
      * Default sorting: head has the largest value.
      */
-    public void push(SinglyListNode newNode){
+    public void push(ListNode newNode){
         if(head == null){
             head = newNode;
         }
         else if(newNode.getValue() > head.getValue()){
-            SinglyListNode tmp = head.getNext();
+            ListNode tmp = head.getNext();
             head = newNode;
             newNode.setNext(tmp);
         }
         else{
-            SinglyListNode cursor = head;
+            ListNode cursor = head;
             while(cursor!=null){
                 if(newNode.getValue() <= cursor.getValue()){ // this if statement is actually redundent
                     if(cursor.getNext() == null){
@@ -40,7 +40,7 @@ public class SortedSinglyList {
                         break;
                     }
                     else if(newNode.getValue() > cursor.getNext().getValue()){
-                        SinglyListNode tmp = cursor.getNext();
+                        ListNode tmp = cursor.getNext();
                         cursor.setNext(newNode);
                         newNode.setNext(tmp);
                         break;
@@ -57,12 +57,12 @@ public class SortedSinglyList {
     /**
      * default pop from the head to tail
      */
-    public SinglyListNode pop(){
+    public ListNode pop(){
         if(this.head == null){
             return null;
         }
         else{
-            SinglyListNode popHead = head;
+            ListNode popHead = head;
             head = head.getNext();
             size--;
             return popHead;
@@ -75,7 +75,7 @@ public class SortedSinglyList {
 
 
     public void push(int newNodeValue){
-        SinglyListNode node = new SinglyListNode(newNodeValue);
+        ListNode node = new ListNode(newNodeValue);
         push(node);
     }
 

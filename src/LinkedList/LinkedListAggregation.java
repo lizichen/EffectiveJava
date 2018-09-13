@@ -5,11 +5,11 @@ package LinkedList;
 public class LinkedListAggregation {
     public static void main(String[] args) {
 
-        SinglyListNode node1 = new SinglyListNode(3);
-        SinglyListNode node2 = new SinglyListNode(4);
-        SinglyListNode node3 = new SinglyListNode(5);
-        SinglyListNode node4 = new SinglyListNode(6);
-        SinglyListNode node5 = new SinglyListNode(7);
+        ListNode node1 = new ListNode(3);
+        ListNode node2 = new ListNode(4);
+        ListNode node3 = new ListNode(5);
+        ListNode node4 = new ListNode(6);
+        ListNode node5 = new ListNode(7);
 
         node1.setNext(node2);
         node2.setNext(node3);
@@ -18,7 +18,7 @@ public class LinkedListAggregation {
 
         sumsInReverse(node1);
 
-        SinglyListNode dummy = node1;
+        ListNode dummy = node1;
 
         for(int i=0;i<5;i++){
             System.out.print(dummy.getValue()+" ");
@@ -26,7 +26,7 @@ public class LinkedListAggregation {
         }
     }
 
-    public static int sumsInReverse(SinglyListNode n){
+    public static int sumsInReverse(ListNode n){
         if(n == null){
             return 0;
         }
@@ -37,7 +37,7 @@ public class LinkedListAggregation {
         return n.getValue();
     }
 
-    public static void sums(SinglyListNode n, int sum){
+    public static void sums(ListNode n, int sum){
         if (n.getNext() == null){
             int value = n.getValue();
             n.setValue(value + sum);

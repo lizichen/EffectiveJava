@@ -1,20 +1,18 @@
 package LinkedList;
 
-import LinkedList.SinglyListNode;
-
 public class ReverseSinglyLinkedList {
 
-    public static SinglyListNode reverseSinglyLinkedList(SinglyListNode head){
+    public static ListNode reverseSinglyLinkedList(ListNode head){
 
         if(head == null)
             return head;
 
-        SinglyListNode todoHead = head.getNext();
-        SinglyListNode newHead = head;
+        ListNode todoHead = head.getNext();
+        ListNode newHead = head;
         newHead.setNext(null);
 
         while(todoHead!=null){
-            SinglyListNode temp = todoHead;
+            ListNode temp = todoHead;
             todoHead = temp.getNext();
             temp.setNext(newHead);
             newHead = temp;
@@ -22,11 +20,11 @@ public class ReverseSinglyLinkedList {
         return newHead;
     }
 
-    public SinglyListNode reverseList(SinglyListNode head) {
-        SinglyListNode newHead = null;
+    public ListNode reverseList(ListNode head) {
+        ListNode newHead = null;
         while(head!=null){
-            SinglyListNode current = head;
-            SinglyListNode temp = head.next;
+            ListNode current = head;
+            ListNode temp = head.next;
             head.next = newHead;
             newHead = current;
             head = temp;
@@ -35,13 +33,13 @@ public class ReverseSinglyLinkedList {
     }
 
     // TODO: Recursive is tricky
-    public static SinglyListNode reverseSinglyLinkedList_recursive(SinglyListNode head){
+    public static ListNode reverseSinglyLinkedList_recursive(ListNode head){
         if(head == null)
             return null;
         if(head.getNext() == null)
             return head;
         else{
-            SinglyListNode returnHead = reverseSinglyLinkedList_recursive(head.getNext());
+            ListNode returnHead = reverseSinglyLinkedList_recursive(head.getNext());
             head.next.next = head;
             head.next = null;
             return returnHead;
@@ -49,13 +47,13 @@ public class ReverseSinglyLinkedList {
     }
 
     public static void main(String[] args) {
-        SinglyListNode n1 = new SinglyListNode(1);
-        SinglyListNode n2 = new SinglyListNode(2);
-        SinglyListNode n3 = new SinglyListNode(3);
-        SinglyListNode n4 = new SinglyListNode(4);
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
         n1.setNext(n2); n2.setNext(n3); n3.setNext(n4);n4.setNext(null);
-        SinglyListNode newHead = reverseSinglyLinkedList_recursive(n1);
-        SinglyListNode cursor = newHead;
+        ListNode newHead = reverseSinglyLinkedList_recursive(n1);
+        ListNode cursor = newHead;
         while(cursor!=null){
             System.out.println(cursor.getValue());
             cursor = cursor.getNext();
