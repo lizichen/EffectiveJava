@@ -15,7 +15,7 @@ public class RootToLeafPaths {
             names[i] = 0;
         }
     }
-
+/*
     public static void main(String[] args) {
         int longestPath = 10;
         RootToLeafPaths rootToLeafPaths = new RootToLeafPaths(longestPath);
@@ -46,6 +46,6 @@ public class RootToLeafPaths {
                 DFS_NoRoot(node, index+1);
             }
         }
-    }
+    }*/
 
 }

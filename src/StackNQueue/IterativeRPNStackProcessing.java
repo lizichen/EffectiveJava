@@ -1,8 +1,8 @@
 package StackNQueue;
 
-import static util.Evaluator.eval;
 import java.util.Stack;
-import static util.Evaluator.isOperator;
+
+import static util.Evaluator.*;
 
 /**
  * Created by lizichen1 on 9/29/16.

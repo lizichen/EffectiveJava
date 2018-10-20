@@ -3,7 +3,7 @@ package InterviewQuiz;
 /**
  * Created by lizichen1 on 7/28/18.
  */
-public class RectangleOverlap_836 {
+public class Bloomberg_RectangleOverlap_836 {
     public static boolean isRectangleOverlap(int[] rec1, int[] rec2) {
         int Ax1 = rec1[0];
         int Ay1 = rec1[1];

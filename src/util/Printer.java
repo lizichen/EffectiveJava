@@ -3,8 +3,6 @@ package util;
 import java.util.HashMap;
 import java.util.List;
 
-import static javafx.scene.input.KeyCode.K;
-
 /**
  * Created by lizichen1 on 9/28/16.
  */
