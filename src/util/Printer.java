@@ -8,20 +8,25 @@ import java.util.List;
  */
 public class Printer {
 
-    public static String printIntArray(int arr[]){
-        String returnValue = "";
+    public static String printIntArrayToString(int arr[]){
+        StringBuilder returnValue = new StringBuilder();
         for (int i:arr) {
-            returnValue += (i+" ");
+            returnValue.append(i);
+            returnValue.append(" ");
         }
-        return returnValue;
+        return returnValue.toString();
     }
 
-    public static String printIntArray(int arr[], int endIndex){
+    public static String printIntArrayToString(int arr[], int endIndex){
         String returnValue = "";
         for (int i=0;i<=endIndex;i++) {
             returnValue += (arr[i]+" ");
         }
         return returnValue;
+    }
+
+    public static void printIntArray(int arr[]){
+        System.out.println(printIntArrayToString(arr));
     }
 
     public static <K,V> String printHashMap(HashMap<K, V> map){

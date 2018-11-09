@@ -1,6 +1,7 @@
 package Tree;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
 Ex. 2.31
@@ -28,7 +29,7 @@ public class DFSPath {
         if(root.children.size() == 0){// root is a leaf
             printPath(this.path, index);
         }else{
-            for (TreeNode3 node: root.children) {
+            for (TreeNode3 node: root.children) { // Review:
                 printDFSPath(node, ++index);
                 index--;
             }
@@ -42,10 +43,29 @@ public class DFSPath {
         System.out.println();
     }
 
+    // Review: another recursive approach:
+    // https://leetcode.com/problems/binary-tree-paths/description/
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> result = new ArrayList();
+        if(root != null)
+            helper(root, "", result);
+        return result;
+    }
+
+    public static void helper(TreeNode root, String path, List<String> list){
+        if(root.left == null && root.right == null){
+            list.add(path + root.val);
+        }else{
+            if(root.left != null)
+                helper(root.left, path + root.val + "->", list);
+            if(root.right != null)
+                helper(root.right, path + root.val + "->", list);
+        }
+    }
+
     public static void main(String[] args) {
         int pathArraySize = 10;
         DFSPath dfsPath = new DFSPath(pathArraySize);
         dfsPath.printDFSPath(TreeFactory.createArbitraryTree(), 0);
     }
-
 }

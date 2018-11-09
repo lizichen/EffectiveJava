@@ -1,19 +1,32 @@
 package Tree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-/**
- * Created by lizichen1 on 9/27/16.
- */
+
 public class TreeFactory {
 
     public static void main(String[] args) {
-        int[] arr = {1,2,2,3,4,4,3};
-        TreeNode root = TreeFactory.createIntegerBinaryTree(arr);
+//        String arrStr = "[5,4,8,1,7,1,4,7,2,8,9,5,1]";
+//        TreeNode root = createBinaryTreeFromArray(arr);
+
+        String arrStr = "[5,4,8,11,null,13,4,7,2,null,null,5,1]";
+        TreeNode root = createBinaryTreeFromArrayWithEmptySpace(arrStr);
+
+        PrintBinaryTree_655 printer = new PrintBinaryTree_655();
+        List<List<String>> res = printer.printTree(root);
+        for(List<String> l:res){
+            for(String s: l){
+                System.out.print(s);
+            }
+            System.out.print("\n");
+        }
     }
 
-    public static TreeNode createIntegerBinaryTree(int[] arr){
+    public static TreeNode createBinaryTreeFromArray(int[] arr){
+        System.out.println("Log: Creating binary tree from input array...");
 
         Queue<TreeNode> queue = new LinkedList();
         TreeNode rootNode =new TreeNode(arr[0]);
@@ -33,7 +46,53 @@ public class TreeFactory {
                 queue.add(inTreeNode.right);
             }
         }
+
+        System.out.println("Log: Finished creating binary tree.");
         return rootNode;
+    }
+
+    // for Leetcode:
+    // "[5,4,8,11,null,13,4,7,2,null,null,5,1]"
+    public static TreeNode createBinaryTreeFromArrayWithEmptySpace(String arrStr){
+
+        String[] intergerInStringArr = convertArrayStringToArrayList(arrStr);
+        int arrIndex = 1;
+
+        TreeNode root = new TreeNode(Integer.valueOf(intergerInStringArr[0]));
+
+        Queue<TreeNode> leafqueue = new LinkedList<TreeNode>();
+        leafqueue.add(root);
+
+        while(!leafqueue.isEmpty()){
+            TreeNode aNode = leafqueue.poll();
+            if(arrIndex == intergerInStringArr.length){
+                break;
+            }
+
+            if(arrIndex < intergerInStringArr.length){
+                if (!intergerInStringArr[arrIndex].trim().equals("null")){
+                    aNode.left = new TreeNode(Integer.valueOf(intergerInStringArr[arrIndex].trim()));
+                    ((LinkedList<TreeNode>) leafqueue).add(aNode.left);
+                }
+                arrIndex++;
+            }
+
+            if(arrIndex < intergerInStringArr.length){
+                if (!intergerInStringArr[arrIndex].trim().equals("null")){
+                    aNode.right = new TreeNode(Integer.valueOf(intergerInStringArr[arrIndex].trim()));
+                    ((LinkedList<TreeNode>) leafqueue).add(aNode.right);
+                }
+                arrIndex++;
+            }
+        }
+
+        return root;
+    }
+
+    // input format:
+    //      "[5,4,8,11,null,13,4,7,2,null,null,5,1]"
+    public static String[] convertArrayStringToArrayList(String arrStr){
+        return arrStr.substring(1, arrStr.length() - 1).split(",");
     }
 
     /**
@@ -62,6 +121,46 @@ public class TreeFactory {
 
         return rootNode;
     }
+
+    /**
+     *               5
+     *            /     \
+     *          2        7
+     *         / \      /  \
+     *        1   3    6    10
+     *             \        /
+     *              4      9
+     *                    /
+     *                   8
+     *
+     */
+    public static TreeNode createIncompleteBinaryTree(){
+        TreeNode node50 =new TreeNode(50); // root
+
+        TreeNode node10=new TreeNode(10);
+        TreeNode node20=new TreeNode(20);
+        TreeNode node30=new TreeNode(30);
+        TreeNode node40=new TreeNode(40);
+
+        TreeNode node60=new TreeNode(60);
+        TreeNode node70=new TreeNode(70);
+        TreeNode node80=new TreeNode(80);
+        TreeNode node90=new TreeNode(90);
+        TreeNode node100=new TreeNode(100);
+
+        node50.left = node20; node50.right = node70;
+
+        node20.left = node10; node20.right = node30;
+        node30.right = node40;
+
+        node70.left = node60; node70.right = node100;
+        node100.left = node90;
+        node90.left = node80;
+
+        return node50;
+    }
+
+
 
     /**
      *                 7   _
@@ -105,6 +204,8 @@ public class TreeFactory {
         return node7;
     }
 
+    // Printers
+
     public static void printAllLeaves(TreeNode3 root){
 
         if(root.getChildren().size() == 0){
@@ -119,5 +220,17 @@ public class TreeFactory {
     public static void printAllRootToLeafPaths(TreeNode3 root, int estLongestPath){
         DFSPath d = new DFSPath(estLongestPath);
         d.printDFSPath(root, 0);
+    }
+
+    public static void printBinaryTree(TreeNode root){
+        PrintBinaryTree_655 printer = new PrintBinaryTree_655();
+
+        List<List<String>> res = printer.printTree(root);
+        for(List<String> l:res){
+            for(String s: l){
+                System.out.print(s);
+            }
+            System.out.print("\n");
+        }
     }
 }
