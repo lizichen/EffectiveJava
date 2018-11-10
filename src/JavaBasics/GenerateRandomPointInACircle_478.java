@@ -1,4 +1,4 @@
-package basic;
+package JavaBasics;
 
 public class GenerateRandomPointInACircle_478 {
     double rad, xc, yc;

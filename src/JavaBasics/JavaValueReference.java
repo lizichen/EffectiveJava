@@ -1,4 +1,4 @@
-package basic;
+package JavaBasics;
 
 /**
  * Created by lizichen1 on 8/30/16.
