@@ -2,6 +2,7 @@ package InterviewQuiz;
 
 import javax.xml.crypto.Data;
 import java.util.*;
+import java.util.stream.Collectors;
 
 // Float_Ceil_or_Floor:
 // 思路就是先把所有floor加起来，然后看差多少，然后把多少个floor转成ceil
@@ -120,7 +121,6 @@ public class Airbnb_OA12 {
 
     // Lizi, with Target param
     public static int[] Solution4(double[] arr, int target){
-
         // Phase 1: digest the data into TreeMap data structure:
         TreeMap<Double, List<Integer>> map = new TreeMap<>(); // TreeMap<difference, the floor>
         int floorSum = 0;
@@ -147,94 +147,56 @@ public class Airbnb_OA12 {
         return result;
     }
 
-    // Lizi, in order
-    public static int[] Solution5(double[] arr, int target){
+    // 千万不要抄啊
+    static class DataEntry{
+        int index;
+        int floorVal;
+        double diff;
+        public DataEntry(int index, int floorVal, double differenceFromFloor){
+            this.index = index;
+            this.floorVal = floorVal;
+            this.diff = differenceFromFloor;
+        }
+    }
 
-        DataEntry[] entries = new DataEntry[arr.length];
-        int floorSum = 0;
-        for(int i=0; i<arr.length; i++){
-            double x = arr[i];
-            int    xFloor = (int)x;
+    public static List<Integer> Solution5(List<Double> prices, int target){
+        DataEntry[] entries = new DataEntry[prices.size()];
+        int floorSum = 0, xFloor;
+        double x;
+        for(int i=0; i<prices.size(); i++){
+            x = prices.get(i);
+            xFloor = (int)x;
             floorSum += xFloor;
             DataEntry newDataEntry = new DataEntry(i, xFloor, x - xFloor);
             entries[i] = newDataEntry;
         }
 
-        int diff = target - floorSum;
-        // sort entries according to difference
-        Arrays.sort(entries, (a, b) -> a.diff >= b.diff ? -1 : 1);
+        int totalDiff = target - floorSum;
+        Arrays.sort(entries, (a, b) -> a.diff >= b.diff ? -1 : 1); // sort entries according to difference
 
-        // add 1 to the first diff entries
         int idx = 0;
-        while(idx < diff){
-            entries[idx] = new DataEntry(entries[idx].index, entries[idx].floorVal+1, entries[idx].diff);
+        while(idx < totalDiff){
+            entries[idx] = new DataEntry(entries[idx].index, entries[idx].floorVal+1, entries[idx].diff); // add 1 to the first diff entries
             idx++;
         }
 
-        // sort entries according to original idx
-        Arrays.sort(entries, (a, b) -> a.index < b.index ? -1 : 1);
+        Arrays.sort(entries, (a, b) -> a.index < b.index ? -1 : 1); // sort entries according to original idx
 
-        // add back to result
-        int[] result = new int[arr.length];
-        for(int i=0; i<arr.length; i++){
-            result[i] = entries[i].floorVal;
+        List<Integer> result = new ArrayList();
+        for(int i=0; i<prices.size(); i++){
+            result.add(entries[i].floorVal);
         }
-
         return result;
     }
 
     public static void main(String[] args) {
-        int[] res;
-
-        //testcases:
-//        double[] arr = {1.2, 1.9, 1.8}; // fine
-//        double[] arr = {1.2, 1.3, 1.1}; // fine
-//        double[] arr = {1.2, 1.2, 1.2}; // fine
-//        double[] arr = {1.6, 1.6, 1.6}; // fine
-//        double[] arr = {1.0, 2.0, 2.0, 3.0};
-
-//        double[] arr = {1.2, 2.5, 3.6, 4.0}; // fine expect: [1,2,4,4]
-//        int target = 11;
-//        double[] arr = {0.7, 2.8, 4.9}; // fine expect: [0,3,5]
-//        int target = 8;
         double[] arr = { 1.2, 3.7, 2.3, 4.8, 5.0, 6.7}; // fine
+        List<Double> prices = Arrays.stream(arr).boxed().collect(Collectors.toList());
         int target = 24;
 
-//        System.out.println("Solution1:");
-//        int[] res = Solution1(arr);
-//        for (int i : res)
-//            System.out.print(i + " ");
-//
-//        System.out.println("\nSolution2:");
-//        res = Solution2(arr);
-//        for (int i : res)
-//            System.out.print(i + " ");
-//
-//        System.out.println("\nSolution3:");
-//        res = Solution3(arr);
-//        for (int i : res)
-//            System.out.print(i + " ");
-
-        System.out.println("\nSolution4:");
-        res = Solution4(arr, target);
-        for(int i : res)
-            System.out.print(i + " ");
-
-        System.out.println("\nSolution5:");
-        res = Solution5(arr, target);
+        List<Integer> res = Solution5(prices, target);
         for(int i: res)
             System.out.print(i + " ");
-    }
-}
-
-class DataEntry{
-    int index;
-    int floorVal;
-    double diff;
-    public DataEntry(int index, int floorVal, double differenceFromFloor){
-        this.index = index;
-        this.floorVal = floorVal;
-        this.diff = differenceFromFloor;
     }
 }
 
