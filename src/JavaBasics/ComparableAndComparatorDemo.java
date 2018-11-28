@@ -30,6 +30,12 @@ public class ComparableAndComparatorDemo {
             System.out.println(s);
         }
 
+        System.out.println("Use StudentGPAComparator");
+        Collections.sort(studentList, new StudentGPAComparator());
+        for(Student s : studentList){
+            System.out.println(s);
+        }
+
         System.out.println("Searching s1 without Comparactor:");
         int searchIdx1 = Collections.binarySearch(studentList, s1);
         System.out.println(searchIdx1);
@@ -80,5 +86,14 @@ class StudentAgeComparator implements Comparator<Student> {
     @Override
     public int compare(Student one, Student another) {
         return one.age - another.age;
+    }
+}
+
+class StudentGPAComparator implements Comparator<Student> {
+    @Override
+    public int compare(Student s1, Student s2){
+        return s1.gpa > s2.gpa ? 1 : -1;   // 1: first > second
+                                           // 0: same, no move
+                                           // -1: second > first
     }
 }
