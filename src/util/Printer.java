@@ -17,12 +17,13 @@ public class Printer {
         return returnValue.toString();
     }
 
-    public static String printIntArrayToString(int arr[], int endIndex){
-        String returnValue = "";
-        for (int i=0;i<=endIndex;i++) {
-            returnValue += (arr[i]+" ");
+    public static <T> void printArray(T[] arr){
+        StringBuilder returnValue = new StringBuilder();
+        for (T i:arr) {
+            returnValue.append(i.toString());
+            returnValue.append(" ");
         }
-        return returnValue;
+        System.out.println(returnValue.toString());
     }
 
     public static void printIntArray(int arr[]){
